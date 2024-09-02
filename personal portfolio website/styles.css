@@ -1,0 +1,124 @@
+
+:root {
+    --primary-color: #4285F4; 
+    --secondary-color: #EA4335; 
+    --tertiary-color: #FBBC05; 
+    --quaternary-color: #34A853; 
+    --background-color: #c6bc99a6;
+    --text-color: #000000;
+
+
+    --background-color-dark: #282828;
+    --text-color-dark: #ffffff;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.section {
+    padding: 60px;
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 3em;
+    margin: 0.5em 0;
+    color: var(--primary-color);
+}
+
+#portfolio .projects {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
+}
+
+#skills .skillrow {
+    opacity: 0;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: var(--quaternary-color);
+    color: #ffffff;
+    border-radius: 8px;
+    transform: translateX(-100%);
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: 0.2s;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+#skills .skillrow:hover {
+    background-color: var(--tertiary-color);
+}
+
+
+#skills .skillrow:nth-child(even) {
+    transform: translateX(100%);
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+/* Dark Mode */
+body.darkmode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.darkmode .project {
+    background-color: var(--tertiary-color);
+}
+
+body.darkmode .skillrow {
+    background-color: var(--primary-color);
+}
+
+#darkmode {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+#darkmode:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+.socialicons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.socialicon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.socialicon:hover {
+    transform: scale(1.2);
+}
